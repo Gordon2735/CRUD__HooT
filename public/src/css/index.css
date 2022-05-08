@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
+
+:root {
+	--bg-primaryDark-clr: hsl(0, 0%, 13%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--bg-primaryDark-clr)
+}
+
+body {
+    margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: auto;
+	text-align: center  
+}
+
+h1 {
+    color: hsl(195, 90%, 88%);
+    color: hsl(195, 100%, 24%);
+}
