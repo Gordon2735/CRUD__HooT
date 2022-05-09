@@ -34,3 +34,4 @@ export class HootHeader extends RenderHeaderTemplate {
         `;
 	}
 }
+customElements.define('hoot-header', HootHeader);

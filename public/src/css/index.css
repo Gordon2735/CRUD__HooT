@@ -24,7 +24,6 @@ body {
 	text-align: center  
 }
 
-h1 {
+.h1-trial {
     color: hsl(195, 90%, 88%);
-    color: hsl(195, 100%, 24%);
 }

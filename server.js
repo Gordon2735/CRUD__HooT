@@ -30,12 +30,15 @@ const handlebars = create({
 	defaultView: 'default',
 	defaultLayout: 'main',
 	layouts: ['main', 'main-secondary', 'main-tertiary', 'main-quarternary'],
-	layoutsDir: path.join(__dirname, 'views', 'layouts'),
-	partialsDir: path.join(__dirname, 'views', 'partials'),
-	helpersDir: path.join(__dirname, 'views', 'helpers')
+	layoutsDir: __dirname + '/views/layouts/',
+	partialsDir: __dirname + '/views/partials/',
+	helpersDir: __dirname + '/views/partials/'
+	// layoutsDir: path.join(__dirname, 'views', 'layouts'),
+	// partialsDir: path.join(__dirname, 'views', 'partials'),
+	// helpersDir: path.join(__dirname, 'views', 'helpers')
 });
 
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', './views');
 app.set('view engine', 'handlebars');
 app.engine('handlebars', handlebars.engine);
 app.enable('view cache');
@@ -47,6 +50,12 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(favicon(path.join(__dirname, 'public/src/img', 'favicon.ico')));
 app.use(express.static('models/'));
+
+router.get('/', (req, res) => {
+	res.set('Content Type', 'text/html');
+	res.sendFile(path.join(__dirname, 'home'));
+	res.render('home');
+});
 
 app.listen(config.PORT, () => {
 	console.info(
