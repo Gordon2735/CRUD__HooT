@@ -10,7 +10,7 @@ let user;
 const home = router
 	.get('/', (req, res) => {
 		res.set('Content-Type', 'text/html');
-		res.render('home', { layouts: 'main' });
+		res.render('home');
 	})
 	.post('/', async (req, res) => {
 		res.json(

@@ -19,11 +19,10 @@ html {
 body {
     margin: 0;
 	padding: 0;
-	width: 100vw;
-	height: auto;
-	text-align: center  
+	width: 100%;
+    height: 100%;
 }
 
 .h1-trial {
-    color: hsl(195, 90%, 88%);
+    color: hsl(195, 100%, 6%);
 }

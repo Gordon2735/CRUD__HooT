@@ -51,10 +51,37 @@ app.use(express.static('public'));
 app.use(favicon(path.join(__dirname, 'public/src/img', 'favicon.ico')));
 app.use(express.static('models/'));
 
-router.get('/', (req, res) => {
-	res.set('Content Type', 'text/html');
-	res.sendFile(path.join(__dirname, 'home'));
-	res.render('home');
+app.use((req, res, next) => {
+	res.status(404).send();
+	next();
+});
+app.use((req, res, next) => {
+	res.status(500).send();
+	next();
+});
+
+app.get('/state', (req, res) => {
+	res.sendFile('components.js', {
+		root: '/state/library/'
+	});
+	res.set('Content-Type', 'text/javascript');
+});
+app.get('/state', (req, res) => {
+	res.sendFile('pubsub.js', {
+		root: '/state/library/'
+	});
+	res.set('Content-Type', 'text/javascript');
+});
+app.get('/state', (req, res) => {
+	res.sendFile('store.js', {
+		root: '/state/store/'
+	});
+	res.set('Content-Type', 'text/javascript');
+});
+
+router.use((req, res, next) => {
+	if (!res.locals.partials) res.locals.partials = {};
+	next();
 });
 
 app.listen(config.PORT, () => {
