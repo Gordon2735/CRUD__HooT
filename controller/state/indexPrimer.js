@@ -5,6 +5,8 @@ import StartScripts from '/state/components/scriptStart.js';
 import StartComponents from '/state/components/startComponents.js';
 
 const hootHeaderElement = document.querySelector('hoot-header');
+const navHeaderElement = document.querySelector('nav-header');
+const hootHomeElement = document.querySelector('hoot-home');
 
 export const currentDOM = async () => {
 	if (store.state.checkHead === true) {
@@ -27,6 +29,46 @@ export const currentDOM = async () => {
 			);
 		};
 		checkHeader();
+
+		const checkNavHeader = async () => {
+			navHeaderElement.addEventListener('DOMContentLoaded', event => {
+				event.preventDefault();
+
+				if (event.composedPath().includes(this)) {
+					store.dispatch('navHeaderElement', event);
+				}
+			});
+			await new Promise(
+				resolve => setTimeout(resolve, 100),
+				() => {
+					console.info(
+						'%cNav Header Element Loaded',
+						'background: #222222; color: #EE82EE'
+					);
+				}
+			);
+		};
+		checkNavHeader();
+
+		const checkHootHome = async () => {
+			hootHomeElement.addEventListener('DOMContentLoaded', event => {
+				event.preventDefault();
+
+				if (event.composedPath().includes(this)) {
+					store.dispatch('hootHomeElement', event);
+				}
+			});
+			await new Promise(
+				resolve => setTimeout(resolve, 100),
+				() => {
+					console.info(
+						'%cHoot Home Element Loaded',
+						'background: #222222; color: #EE82EE'
+					);
+				}
+			);
+		};
+		checkHootHome();
 	}
 };
 currentDOM();

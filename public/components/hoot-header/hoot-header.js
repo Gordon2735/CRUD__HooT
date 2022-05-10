@@ -30,7 +30,7 @@ export class HootHeader extends RenderHeaderTemplate {
 			root.appendChild(main);
 			main.appendChild(primaryHeader);
 
-			init();
+			await init();
 		};
 		RenderDom();
 	}

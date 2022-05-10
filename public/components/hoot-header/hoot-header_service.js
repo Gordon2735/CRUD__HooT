@@ -71,7 +71,7 @@ export default async function init() {
 	const headerChildren = [primaryFigure, primaryH1, primaryH2];
 	const figureChildren = [primaryImg, primaryFigcaption];
 
-	const h1Text = (primaryH1.innerHTML = `Hoot${textTM} Webelistics${textR}`);
+	const h1Text = (primaryH1.innerHTML = `HooT${textTM} Webelistics${textR}`);
 	const h2Text =
 		(primaryH2.innerHTML = `Internet Application Development<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  System Software Development  `);
 	const figcaptionText =

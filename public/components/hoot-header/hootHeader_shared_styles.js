@@ -24,13 +24,14 @@ sharedStyles.main = `
         --font-modalMain-clr: hsl(195, 90%, 88%);
         --font-modalMain2-clr: hsl(180, 100%, 100%);
         --font-primary-clr: hsl(0, 0%, 100%);
+        --font-primaryhoot-clr: hsl(32, 83%, 54%);
         --font-sizeHeader: 2.6rem;
         --font-sizeSubHeader: 1.0rem;
         --font-sizeCaption: 0.5rem;
         --font-sizeSuper: 0.7rem;
         --font-familyHeader: 'Chango', sans-serif;
         --font-familySubHeader: 'Days One', sans-serif;
-        --text-shadow: 3px 3px 4px hsl(195, 100%, 6%);
+        --text-shadow: 3px 2px 2px hsl(195, 100%, 6%);
         --box-shadow: 6px 4px 10px hsl(195, 100%, 6%);
     }   
 
@@ -90,6 +91,8 @@ sharedStyles.hootheader = `
         padding: 0.15vh 0 -0.5vh 0vh;
         width: 22%;
         justify-self: left;
+        filter: drop-shadow(8px 4px 7px hsl(195, 100%, 6%));
+        
     }
 
     .primary-figure .primary-figcaption {
@@ -97,7 +100,7 @@ sharedStyles.hootheader = `
         margin: 0vh 0 0.1vh 0;
         padding: 0;
         font-family: var(--font-familySubHeader);
-        color: var(--font-modalMain-clr);
+        color: var(--font-primaryhoot-clr);
         font-size: var(--font-sizeCaption);
         text-align: left;
     }
@@ -112,10 +115,10 @@ sharedStyles.hootheader = `
         justify-self: center;
         align-text: left;
         font-family: var(--font-familyHeader);
-        color: var(--font-modalMain2-clr);
+        color: var(--font-primaryhoot-clr);
         font-size: var(--font-sizeHeader);
         font-weight: bold;
-        letter-spacing: 0.2rem;
+        letter-spacing: 0.25rem;
         text-shadow: var(--text-shadow);
     }
     
@@ -135,7 +138,7 @@ sharedStyles.hootheader = `
         font-family: var(--font-familySubHeader);
         color: var(--font-modalMain2-clr);
         font-size: var(--font-sizeSubHeader);
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.2rem;
         text-shadow: var(--text-shadow);
     }
 

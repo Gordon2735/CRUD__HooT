@@ -5,18 +5,6 @@ import {
 	renderHeadScripts
 } from '../../src/js/js_library/primaryUtility.js';
 
-const headerShellScript = document.createElement('script');
-setAttributes(headerShellScript, {
-	src: '../components/hoot-header/hoot-header_shell.js',
-	type: 'module'
-});
-
-const hootScript = document.createElement('script');
-setAttributes(hootScript, {
-	src: '../components/hoot-header/hoot-header.js',
-	type: 'module'
-});
-
 const hootServiceScript = document.createElement('script');
 setAttributes(hootServiceScript, {
 	src: '../components/hoot-header/hoot-header_service.js',

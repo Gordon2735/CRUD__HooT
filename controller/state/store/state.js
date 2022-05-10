@@ -1,5 +1,5 @@
 'use strict';
 
 export default {
-	items: ['I made this', 'Another thing']
+	items: ['HooT Webelistics', 'Time to Excell']
 };

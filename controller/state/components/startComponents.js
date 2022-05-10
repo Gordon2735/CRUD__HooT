@@ -17,6 +17,19 @@ setAttributes(hootHeaderShell, {
 	alt: 'hoot-headershell Web-Component Header Shell'
 });
 
+const hootNavHeaderShell = document.createElement('nav-header');
+setAttributes(hootNavHeaderShell, {
+	id: 'nav-header',
+	class: 'nav-header',
+	alt: 'nav-header Web-Component Header Shell'
+});
+
+const hootHomeShell = document.createElement('hoot-home');
+setAttributes(hootHomeShell, {
+	id: 'hoot-home',
+	class: 'hoot-home',
+	alt: 'hoot-home Web-Component Header Shell'
+});
 export default class StartComponents extends Component {
 	constructor() {
 		super({
@@ -26,6 +39,8 @@ export default class StartComponents extends Component {
 	}
 	render() {
 		this.element.appendChild(hootHeaderShell);
+		this.element.appendChild(hootNavHeaderShell);
+		this.element.appendChild(hootHomeShell);
 
 		return;
 	}
