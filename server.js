@@ -106,6 +106,7 @@ trackEmitter.on('log', message => {
 });
 setTimeout(() => {
 	trackEmitter.emit('log', 'Nodemon Server Log "EVENT EMITTED"');
+	console.log(new Date());
 });
 
 // Create a write stream (in append mode)(morgan)

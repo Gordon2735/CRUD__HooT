@@ -1,0 +1,11 @@
+{
+  "name": "hoot-home",
+  "version": "1.0.0",
+  "description": "Landing-Page Web-Component for this CRUD Mongoose based Schema, with a MongoDB NoSQL Document type Database.",
+  "main": "hoot-home.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Gordon R Mullen Jr",
+  "license": "MIT"
+}
