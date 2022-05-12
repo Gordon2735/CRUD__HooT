@@ -26,6 +26,7 @@
             npm i @babel/cli @babel/node -D
             npm i @babel/core @babel/preset-env -D
             npm i babel-jest @babel/registry -D
+            npm i jest-environment-jsdom-latest -D
 <!--  -->
 
 <!--  -->

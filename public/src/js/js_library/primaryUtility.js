@@ -14,10 +14,10 @@ export async function removeChildren(parent, children) {
 	}
 }
 
-export const getElement = element => document.querySelector(element);
-export const getElements = element => document.querySelectorAll(element);
-export const getElementById = element => document.getElementById(element);
-export const getElementByClass = element =>
+export const queryElement = element => document.querySelector(element);
+export const queryAllElements = element => document.querySelectorAll(element);
+export const elementById = element => document.getElementById(element);
+export const elementsByClass = element =>
 	document.getElementsByClassName(element);
 
 export const setAttributes = (element, attributes) => {
