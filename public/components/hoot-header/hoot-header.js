@@ -17,6 +17,7 @@ export class HootHeader extends RenderHeaderTemplate {
 		const RenderDom = async () => {
 			const root = this.shadowRoot;
 			const main = document.createElement('main');
+
 			setAttributes(main, {
 				id: 'hoot-main',
 				class: 'hoot-main',
@@ -31,6 +32,26 @@ export class HootHeader extends RenderHeaderTemplate {
 			main.appendChild(primaryHeader);
 
 			await init();
+
+			const contactSpan = document.createElement('span');
+			setAttributes(contactSpan, {
+				id: 'contact-span',
+				class: 'contact-span',
+				alt: 'Contact Span'
+			});
+			const contactA = document.createElement('a');
+			setAttributes(contactA, {
+				id: 'contact-a',
+				class: 'contact-a',
+				href: '/contact_us',
+				alt: 'Contact A'
+			});
+			const textContactA = () => {
+				contactA.innerHTML = `Contact Form`;
+			};
+			root.appendChild(contactSpan);
+			contactSpan.appendChild(contactA);
+			textContactA();
 		};
 		RenderDom();
 	}

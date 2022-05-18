@@ -3,7 +3,7 @@
 import { RenderContactTemplate } from './render-templateContact.js';
 import { sharedStyles } from './hoot-contact_sharedStyles.js';
 
-export class RenderContactShell extends RenderContactTemplate {
+export class ContactShell extends RenderContactTemplate {
 	constructor() {
 		super();
 
@@ -30,4 +30,4 @@ export class RenderContactShell extends RenderContactTemplate {
         `;
 	}
 }
-customElements.define('render-contactshell', RenderContactShell);
+customElements.define('contact-shell', ContactShell);

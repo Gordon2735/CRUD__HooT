@@ -30,6 +30,7 @@ setAttributes(hootHomeShell, {
 	class: 'hoot-home',
 	alt: 'hoot-home Web-Component Header Shell'
 });
+
 export default class StartComponents extends Component {
 	constructor() {
 		super({
@@ -39,7 +40,7 @@ export default class StartComponents extends Component {
 	}
 	render() {
 		this.element.appendChild(hootHeaderShell);
-		this.element.appendChild(hootNavHeaderShell);
+		// this.element.appendChild(hootNavHeaderShell);
 		this.element.appendChild(hootHomeShell);
 
 		return;

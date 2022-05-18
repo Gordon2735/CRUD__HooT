@@ -8,7 +8,9 @@ import {
 const hootServiceScript = document.createElement('script');
 setAttributes(hootServiceScript, {
 	src: '../components/hoot-header/hoot-header_service.js',
-	type: 'module'
+	type: 'module',
+	content: 'text/javascript',
+	crossorigin: 'anonymous'
 });
 
 const headScripts = [hootServiceScript];

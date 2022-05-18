@@ -7,7 +7,7 @@ import {
 
 const navHeaderServiceScript = document.createElement('script');
 setAttributes(navHeaderServiceScript, {
-	src: '../components/hoot-nav_header/navheader-service.js',
+	src: '../components/hoot-nav/navheader-service.js',
 	type: 'module'
 });
 

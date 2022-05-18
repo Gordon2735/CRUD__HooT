@@ -23,7 +23,7 @@ const scriptNavHeaderShell = document.createElement('script');
 setAttributes(scriptNavHeaderShell, {
 	id: 'script-nav-header-shell',
 	type: 'module',
-	src: '../components/hoot-nav_header/navheader-shell.js',
+	src: '../components/hoot-nav/navheader-shell.js',
 	content: 'text/javascript',
 	crossorigin: 'anonymous',
 	alt: 'Script for navheader-shell Web-Component Shell'
@@ -51,7 +51,7 @@ setAttributes(scriptHeader, {
 const scriptNavHeader = document.createElement('script');
 setAttributes(scriptNavHeader, {
 	type: 'module',
-	src: '../components/hoot-nav_header/nav-header.js',
+	src: '../components/hoot-nav/nav-header.js',
 	content: 'text/javascript',
 	crossorigin: 'anonymous'
 });
@@ -73,10 +73,10 @@ export default class StartScripts extends Component {
 	}
 	render() {
 		this.element.appendChild(scriptHeaderComponentShell);
-		this.element.appendChild(scriptNavHeaderShell);
+		// this.element.appendChild(scriptNavHeaderShell);
 		this.element.appendChild(scriptHootHomeShell);
 		this.element.appendChild(scriptHeader);
-		this.element.appendChild(scriptNavHeader);
+		// this.element.appendChild(scriptNavHeader);
 		this.element.appendChild(scriptHootHome);
 
 		return;

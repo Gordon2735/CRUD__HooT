@@ -25,7 +25,7 @@ sharedStyles.main = `
         --font-modalMain2-clr: hsl(180, 100%, 100%);
         --font-primary-clr: hsl(0, 0%, 100%);
         --font-primaryhoot-clr: hsl(32, 83%, 54%);
-        --font-sizeHeader: 2.6rem;
+        --font-sizeHeader: 2.9rem;
         --font-sizeSubHeader: 1.0rem;
         --font-sizeCaption: 0.5rem;
         --font-sizeSuper: 0.7rem;
@@ -79,6 +79,7 @@ sharedStyles.hootheader = `
         grid-area: 
             header 
             subheader;
+        margin: 1.3vh 0 0 1vw;
         width: 35vw;
         height: 31vh;
         jusify-content: left;
@@ -91,7 +92,8 @@ sharedStyles.hootheader = `
         padding: 0.15vh 0 -0.5vh 0vh;
         width: 22%;
         justify-self: left;
-        filter: drop-shadow(8px 4px 7px hsl(195, 100%, 6%));
+        filter: drop-shadow(8px 4px 6px hsl(195, 100%, 6%));
+        transform: rotate(-13deg);
         
     }
 
@@ -141,6 +143,31 @@ sharedStyles.hootheader = `
         letter-spacing: 0.2rem;
         text-shadow: var(--text-shadow);
     }
+
+    .contact-span {
+        grid-area: main;
+        margin: -17vh 0vw 0vh 22vw;
+        padding: 0vh 0vw 20vh 20vw;
+        position: absolute;
+        z-index: 100;
+
+    }
+
+    .contact-span .contact-a {
+        margin: 0vh 0vw 0vh 0vw;
+        padding: 0vh 0vw 0 0vw;
+        font-family: var(--font-familySubHeader);
+        color: var(--bg-primaryDark-clr);
+        font-size: var(--font-sizeCaption);
+        letter-spacing: 0.2rem;
+        z-index: 100;
+    }
+
+    .contact-a:hover {
+        color: var(--font-primaryhoot-clr);
+        cursor: pointer;
+    }
+
 
 
 `;

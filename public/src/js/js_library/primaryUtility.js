@@ -13,9 +13,6 @@ export async function removeChildren(parent, children) {
 		parent.removeChild(child);
 	}
 }
-
-export const queryElement = element => document.querySelector(element);
-export const queryAllElements = element => document.querySelectorAll(element);
 export const elementById = element => document.getElementById(element);
 export const elementsByClass = element =>
 	document.getElementsByClassName(element);

@@ -78,6 +78,18 @@ app.get('/state', (req, res) => {
 	});
 	res.set('Content-Type', 'text/javascript');
 });
+app.get('/404', (req, res) => {
+	res.sendFile('404.handlebars', {
+		root: __dirname + '/views/'
+	});
+	res.set('Content-Type', 'text/html');
+});
+app.get('/500', (req, res) => {
+	res.sendFile('500.handlebars', {
+		root: __dirname + '/views/'
+	});
+	res.set('Content-Type', 'text/html');
+});
 
 router.use((req, res, next) => {
 	if (!res.locals.partials) res.locals.partials = {};

@@ -2,6 +2,7 @@
   "name": "hoot-contact",
   "version": "1.0.0",
   "description": "hoot-contact is a Native Web-Component of a Contact-Form complete with a Mongoose Schema interfacing a MongoDB NoSQL Document Database for Customer Messaging along side of our Contact information!",
+  "type": "module",
   "main": "hoot-contact.js",
   "scripts": {
     "test": "jest"

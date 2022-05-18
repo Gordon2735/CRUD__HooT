@@ -7,7 +7,7 @@ import './hoothome-index.js';
 import './hoothome-service.js';
 import '../../src/js/js_library/primaryUtility.js';
 
-export class HoothomeShell extends RenderHoothomeTemplate {
+export class HootHomeShell extends RenderHoothomeTemplate {
 	constructor() {
 		super();
 
@@ -39,4 +39,4 @@ export class HoothomeShell extends RenderHoothomeTemplate {
         `;
 	}
 }
-customElements.define('hoothome-shell', HoothomeShell);
+customElements.define('hoothome-shell', HootHomeShell);
