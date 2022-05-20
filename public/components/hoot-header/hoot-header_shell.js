@@ -28,7 +28,7 @@ export class HeaderShell extends RenderHeaderTemplate {
 	get template() {
 		return `
 
-            <hoot-header></hoot-header>
+            <hoot-header class="hoot-header"></hoot-header>
 
             <style>
 

@@ -9,7 +9,7 @@ import appendChildren, {
 const body = document.querySelector('body');
 const contactHeader = document.createElement('header');
 const contactFigure = document.createElement('figure');
-const contactImg = document.createElement('img');
+const imgSpan = document.createElement('span');
 const contactFigcaption = document.createElement('figcaption');
 const contactH1 = document.createElement('h1');
 const contactP = document.createElement('p');
@@ -26,11 +26,8 @@ setAttributes(contactFigure, {
 	id: 'contact-figure',
 	class: 'contact-figure'
 });
-setAttributes(contactImg, {
-	id: 'contact-img',
-	class: 'contact-img',
-	src: './components/hoot-contact/img/js-JSON.png',
-	alt: 'JavaScript Logo'
+setAttributes(imgSpan, {
+	class: 'fa-solid fa-user'
 });
 setAttributes(contactFigcaption, {
 	id: 'contact-figcaption',
@@ -42,18 +39,23 @@ setAttributes(contactH1, {
 });
 setAttributes(contactP, {
 	id: 'contact-p',
-	class: 'contact-p',
-	textContent: 'Please enter your username and password to login.'
+	class: 'contact-p'
 });
 
-const textContactH1 = (contactH1.innerHTML = 'User Login');
-const textContactP = (contactP.innerHTML =
-	'Please enter your username and password to login.');
-const textGroup = [textContactH1, textContactP];
+// const faUserIcon =
+// 	(contactFigure.innerHTML = `<i class="fa-solid fa-circle-user"></i>`);
+const textContactH1 = (contactH1.innerHTML = `User Login`);
+const textContactP =
+	(contactP.innerHTML = `Please enter your username and password to login.`);
+const textCaption =
+	(contactFigcaption.innerHTML = `Plan om changing this to a  fontawesome icon.`);
+const textGroup = [textContactH1, textContactP, textCaption];
 
 // Appending Header Children
 const headerChildren = [contactFigure, contactH1, contactP];
-const contactFigureChildren = [contactImg, contactFigcaption];
+const contactFigureChildren = [imgSpan, contactFigcaption];
+
+// font awesome icon
 
 // Appending Container Children
 appendChildren(contactHeader, headerChildren);
@@ -62,9 +64,6 @@ renderArray(textGroup);
 
 // Form Element and Children
 const contactForm = document.createElement('form');
-const formH1 = document.createElement('h1');
-const formFigure = document.createElement('figure');
-const formFigureImg = document.createElement('img');
 const formContainerDiv = document.createElement('div');
 const formInnerContainerDiv = document.createElement('div');
 const usernameLabel = document.createElement('label');
@@ -81,24 +80,14 @@ const checkboxLabel = document.createElement('label');
 const checkboxInput = document.createElement('input');
 const forgetPasswordSpan = document.createElement('span');
 const spanA = document.createElement('a');
+const formH1 = document.createElement('h1');
+const spanSignup = document.createElement('span');
+const aSpanSignup = document.createElement('a');
 
 setAttributes(contactForm, {
 	id: 'contact-form',
 	class: 'contact-form',
 	action: '#'
-});
-setAttributes(formH1, {
-	id: 'form-h1',
-	class: 'form-h1',
-	textContent: 'SIGN UP'
-});
-setAttributes(formFigure, {
-	id: 'form-figure',
-	class: 'form-figure'
-});
-setAttributes(formFigureImg, {
-	id: 'form-figure-img',
-	class: 'fas fa-user-circle'
 });
 setAttributes(formContainerDiv, {
 	id: 'form-container-div',
@@ -111,7 +100,6 @@ setAttributes(formInnerContainerDiv, {
 setAttributes(usernameLabel, {
 	id: 'username-label',
 	class: 'username-label',
-	textContent: 'Username',
 	for: 'uname'
 });
 setAttributes(usernameInput, {
@@ -125,7 +113,6 @@ setAttributes(usernameInput, {
 setAttributes(emailLabel, {
 	id: 'email-label',
 	class: 'email-label',
-	textContent: 'E-mail',
 	for: 'mail'
 });
 setAttributes(emailInput, {
@@ -139,7 +126,6 @@ setAttributes(emailInput, {
 setAttributes(passwordLabel, {
 	id: 'password-label',
 	class: 'password-label',
-	textContent: 'Password',
 	for: 'psw'
 });
 setAttributes(passwordInput, {
@@ -153,7 +139,6 @@ setAttributes(passwordInput, {
 setAttributes(repasswordLabel, {
 	id: 'repassword-label',
 	class: 'repassword-label',
-	textContent: 'Re-Enter Password',
 	for: 'repsw'
 });
 setAttributes(repasswordInput, {
@@ -167,8 +152,7 @@ setAttributes(repasswordInput, {
 setAttributes(submitButton, {
 	id: 'submit-button',
 	class: 'submit-button',
-	type: 'submit',
-	textContent: 'Sign Up'
+	type: 'submit'
 });
 setAttributes(checkboxContainerDiv, {
 	id: 'checkbox-container-div',
@@ -177,8 +161,7 @@ setAttributes(checkboxContainerDiv, {
 });
 setAttributes(checkboxLabel, {
 	id: 'checkbox-label',
-	class: 'checkbox-label',
-	textContent: 'Remember me'
+	class: 'checkbox-label'
 });
 setAttributes(checkboxInput, {
 	id: 'checkbox-input',
@@ -194,16 +177,64 @@ setAttributes(forgetPasswordSpan, {
 setAttributes(spanA, {
 	id: 'span-a',
 	class: 'span-a',
-	textContent: 'Forgot password?',
 	href: '#'
 });
+setAttributes(formH1, {
+	id: 'form-h1',
+	class: 'form-h1'
+});
+setAttributes(spanSignup, {
+	id: 'span-signup',
+	class: 'span-signup'
+});
+setAttributes(aSpanSignup, {
+	id: 'a-span-signup',
+	class: 'a-span-signup',
+	href: '/users'
+});
 
-const formChildren = [formH1, formFigure, formContainerDiv];
-const formFigureChildren = [formFigureImg, formInnerContainerDiv];
+// having problems renderering font awesome icon || so I'm doing
+// some experimentation here. The main problem is that the font awesome
+// icon is not rendering correctly because of the shadowDOM I believe
+const fontAwesomeScript = document.createElement('script');
+setAttributes(fontAwesomeScript, {
+	type: 'module',
+	// src: `https:${/}/kit.fontawesome.com/d7af42e269.js`,
+	crossorigin: 'anonymous'
+});
+
+const renderTextElements = () => {
+	const textFormH1 = (formH1.innerHTML = `Sign Up`);
+	const textSpanSignup = (spanSignup.innerHTML = `Need to open an account? `);
+	const textUsernameLabel = (usernameLabel.innerHTML = `Username`);
+	const textCheckboxLabel = (checkboxLabel.innerHTML = `Remember Me`);
+	const textEmailLabel = (emailLabel.innerHTML = `Enter your E-mail`);
+	const textPasswordLabel = (passwordLabel.innerHTML = `Enter Password`);
+	const textRepasswordLabel =
+		(repasswordLabel.innerHTML = `Re-Enter Password`);
+	const textButton = (submitButton.innerHTML = `Submit Log-In`);
+	const textSpanA = (spanA.innerHTML = `Forgot password?`);
+
+	const textFormGroup = [
+		textUsernameLabel,
+		textCheckboxLabel,
+		textEmailLabel,
+		textPasswordLabel,
+		textRepasswordLabel,
+		textButton,
+		textSpanA,
+		textFormH1,
+		textSpanSignup
+	];
+	renderArray(textFormGroup);
+};
+
+const formChildren = [contactHeader, formContainerDiv, formH1];
 const formContainerDivChildren = [
 	formInnerContainerDiv,
 	submitButton,
-	checkboxContainerDiv
+	checkboxContainerDiv,
+	spanSignup
 ];
 const formInnerContainerDivChildren = [
 	usernameLabel,
@@ -221,13 +252,14 @@ const checkboxContainerDivChildren = [
 	forgetPasswordSpan
 ];
 forgetPasswordSpan.appendChild(spanA);
+spanSignup.appendChild(aSpanSignup);
 
-// Appending Form Children
-appendChildren(contactForm, formChildren);
-appendChildren(formFigure, formFigureChildren);
+// Appending Form Children with main form container exported to main
+// shadow root of the component and rendered to the shadowDOM.
 appendChildren(formContainerDiv, formContainerDivChildren);
 appendChildren(formInnerContainerDiv, formInnerContainerDivChildren);
 appendChildren(checkboxContainerDiv, checkboxContainerDivChildren);
+appendChildren(contactForm, formChildren);
 //
 //
 export { contactHeader as default, contactForm };

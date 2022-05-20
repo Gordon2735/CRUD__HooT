@@ -17,9 +17,9 @@ export const elementById = element => document.getElementById(element);
 export const elementsByClass = element =>
 	document.getElementsByClassName(element);
 
-export const setAttributes = (element, attributes) => {
+export const setAttributes = (tag, attributes) => {
 	for (const key in attributes) {
-		element.setAttribute(key, attributes[key]);
+		tag.setAttribute(key, attributes[key]);
 	}
 };
 

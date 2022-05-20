@@ -25,6 +25,7 @@ sharedStyles.main = `
         --font-modalMain2-clr: hsl(180, 100%, 100%);
         --font-primary-clr: hsl(0, 0%, 100%);
         --font-primaryhoot-clr: hsl(32, 83%, 54%);
+        --font-secondary-clr: hsl(0, 0%, 0%);
         --font-sizeHeader: 2.9rem;
         --font-sizeSubHeader: 1.0rem;
         --font-sizeCaption: 0.5rem;
@@ -45,25 +46,25 @@ sharedStyles.main = `
         background: var(--bg-primary-clr);
     }
 
+    .hoot-header {
+        margin: 0 auto 0 auto;
+    }
+
 `;
 
 sharedStyles.hootheader = `       
 
     .hoot-main {       
         margin: 0;
-        left: 0;
-        top: 0;
         width: 100%;
-        height: 30vh;
-        
+        height: 30vh;        
     }
 
     .primary-header { 
         display: grid;
         grid-template-areas:
             "header header ..."
-            "main main main"
-            "subheader subheader subheader";
+            "main main main";
         grid-template-columns: 1fr 1fr 1fr;
         margin: 0;       
         width: 99.7%;
@@ -78,7 +79,7 @@ sharedStyles.hootheader = `
     .primary-figure {
         grid-area: 
             header 
-            subheader;
+            main;
         margin: 1.3vh 0 0 1vw;
         width: 35vw;
         height: 31vh;
@@ -98,7 +99,7 @@ sharedStyles.hootheader = `
     }
 
     .primary-figure .primary-figcaption {
-        grid-area: subheader;
+        grid-area: main;
         margin: 0vh 0 0.1vh 0;
         padding: 0;
         font-family: var(--font-familySubHeader);
@@ -109,9 +110,7 @@ sharedStyles.hootheader = `
 
     .primary-h1 {
         grid-area: header ...
-            main main;
-        top: 0;
-        left: 40vw;
+            main ;
         margin: 5vh 0 0 -19vw;
         padding: 0;
         justify-self: center;
@@ -145,7 +144,7 @@ sharedStyles.hootheader = `
     }
 
     .contact-span {
-        grid-area: main;
+        grid-area: main main;
         margin: -17vh 0vw 0vh 22vw;
         padding: 0vh 0vw 20vh 20vw;
         position: absolute;

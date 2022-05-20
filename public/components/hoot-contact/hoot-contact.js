@@ -19,9 +19,13 @@ export class HootContact extends RenderContactTemplate {
 	connectedCallback() {
 		super.connectedCallback();
 
-		const root = this.shadowRoot;
+		const appendServiceParents = () => {
+			const root = this.shadowRoot;
 
-		appendChildren(root, [contactHeader, contactForm]);
+			const compileElements = [contactForm];
+			appendChildren(root, compileElements);
+		};
+		appendServiceParents();
 	}
 	get template() {
 		return `
@@ -33,5 +37,4 @@ export class HootContact extends RenderContactTemplate {
 		`;
 	}
 }
-
 customElements.define('hoot-contact', HootContact);
