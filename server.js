@@ -25,17 +25,35 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Using String Interpolation
+const dbURI = `${config.DATABASE_URL}`;
+// console.log(typeof dbURI); had to use "String Interpolation"
+// of JavaScript's powerful and communicative 'Template Literals'
+// to convert the dbURI variable to a string.
+mongoose.connect(dbURI, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true
+});
+const mongooseConnection = mongoose.connection;
+mongooseConnection
+	.on('open', () => {
+		console.log('Connected to MongoDB');
+	})
+	.on('close', () => {
+		console.log('Disconnected from MongoDB');
+	})
+	.on('error', error => {
+		console.log('Error connecting to MongoDB', error);
+	});
+
 const handlebars = create({
 	extname: '.handlebars',
 	defaultView: 'default',
 	defaultLayout: 'main',
 	layouts: ['main', 'main-secondary', 'main-tertiary', 'main-quarternary'],
-	layoutsDir: __dirname + '/views/layouts/',
-	partialsDir: __dirname + '/views/partials/',
-	helpersDir: __dirname + '/views/partials/'
-	// layoutsDir: path.join(__dirname, 'views', 'layouts'),
-	// partialsDir: path.join(__dirname, 'views', 'partials'),
-	// helpersDir: path.join(__dirname, 'views', 'helpers')
+	layoutsDir: path.join(__dirname, 'views', 'layouts'),
+	partialsDir: path.join(__dirname, 'views', 'partials'),
+	helpersDir: path.join(__dirname, 'views', 'helpers')
 });
 
 app.set('views', './views');

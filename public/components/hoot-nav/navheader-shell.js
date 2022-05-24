@@ -18,8 +18,6 @@ export class NavHeaderShell extends RenderNavHeaderTemplate {
 
 		super.connectedCallback();
 
-		const root = this.shadowRoot;
-
 		console.log(
 			'%c This Web Component has || * FIRED * || navheader-shell.js is connected',
 			'background: transparent ; color: hsl(32, 83%, 54%);'

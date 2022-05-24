@@ -45,17 +45,21 @@ sharedStyles.main = `
         `;
 
 sharedStyles.contacts = `
-        
-        :host {
-            --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
-        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             display: flex;
             justify-content: center;
             font-family: Roboto, Arial, sans-serif;
             font-size: 1.5rem;
-        }      
+        }  
+        
+      
         
         .contact-form {
             margin: -11vh auto 0 auto;
@@ -77,6 +81,7 @@ sharedStyles.contacts = `
             text-align: center;
         }
 
+        input[type='reset'],
         input[type='text'],
         input[type='password'] {
             margin: 0.8px auto 1.2vh auto;
@@ -94,29 +99,8 @@ sharedStyles.contacts = `
             display: flex;
             justify-content: center;
             justify-self: center;
-        }
-        
-        // .fa {  
-        //     width: 100%;
-        //     height: auto;          
-        //     text-align: center;
-        //     justify-content: center;
-        //     Z-index: 300;
-
-        // }
-
-        // :host {
-        //     --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
-        // }
-        
-        span.fa {
-            width: 100%;
-            height: auto;          
-            text-align: center;
-            justify-content: center;
-            justify-self: center;
-            Z-index: 300;
-        }
+        }   
+     
 
         .contact-figcaption {
             font-size: 0.5rem;

@@ -18,8 +18,6 @@ export class HeaderShell extends RenderHeaderTemplate {
 
 		super.connectedCallback();
 
-		const root = this.shadowRoot;
-
 		console.log(
 			'%c This Web Component has || * FIRED * || hoot-header_shell.js is connected',
 			'background: transparent ; color: hsl(32, 83%, 54%);'

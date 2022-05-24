@@ -14,5 +14,8 @@ dotenv.config({
 export default {
 	NODE_ENV: process.env.NODE_ENV || 'development',
 	HOST: process.env.HOST || '127.0.0.1:',
-	PORT: process.env.PORT || 9080
+	PORT: process.env.PORT || 9080,
+	DATABASE_URL:
+		process.env.DATABASE_URL ||
+		'mongodb+srv://webe-site-admin:mat2819@sandbox.glrio.mongodb.net/webe_blog?retryWrites=true&w=majority'
 };

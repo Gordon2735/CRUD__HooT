@@ -7,7 +7,8 @@ import { sharedStyles } from './hoot-contact_sharedStyles.js';
 import appendChildren, {
 	setAttributes
 } from '../../src/js/js_library/primaryUtility.js';
-import contactHeader, { contactForm } from './hoot-contact_service.js';
+import contactForm from './hoot-contact_service.js';
+
 import './hoot-contact_service.js';
 
 export class HootContact extends RenderContactTemplate {
@@ -19,9 +20,9 @@ export class HootContact extends RenderContactTemplate {
 	connectedCallback() {
 		super.connectedCallback();
 
-		const appendServiceParents = () => {
-			const root = this.shadowRoot;
+		const root = this.shadowRoot;
 
+		const appendServiceParents = () => {
 			const compileElements = [contactForm];
 			appendChildren(root, compileElements);
 		};

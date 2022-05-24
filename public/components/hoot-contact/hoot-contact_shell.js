@@ -19,12 +19,12 @@ export class ContactShell extends RenderContactTemplate {
 	get template() {
 		return `
         
+		<hoot-contact class="hoot-contact"></hoot-contact>
 		
 		<style>		
 			${sharedStyles.main}		
 		</style>
         
-		<hoot-contact class="hoot-contact"></hoot-contact>
 		
         `;
 	}

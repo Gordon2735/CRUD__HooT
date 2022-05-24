@@ -9,7 +9,7 @@ import appendChildren, {
 const body = document.querySelector('body');
 const contactHeader = document.createElement('header');
 const contactFigure = document.createElement('figure');
-const imgSpan = document.createElement('span');
+// const imgSpan = document.createElement('span');
 const contactFigcaption = document.createElement('figcaption');
 const contactH1 = document.createElement('h1');
 const contactP = document.createElement('p');
@@ -26,9 +26,6 @@ setAttributes(contactFigure, {
 	id: 'contact-figure',
 	class: 'contact-figure'
 });
-setAttributes(imgSpan, {
-	class: 'fa-solid fa-user'
-});
 setAttributes(contactFigcaption, {
 	id: 'contact-figcaption',
 	class: 'contact-figcaption'
@@ -42,8 +39,6 @@ setAttributes(contactP, {
 	class: 'contact-p'
 });
 
-// const faUserIcon =
-// 	(contactFigure.innerHTML = `<i class="fa-solid fa-circle-user"></i>`);
 const textContactH1 = (contactH1.innerHTML = `User Login`);
 const textContactP =
 	(contactP.innerHTML = `Please enter your username and password to login.`);
@@ -53,9 +48,7 @@ const textGroup = [textContactH1, textContactP, textCaption];
 
 // Appending Header Children
 const headerChildren = [contactFigure, contactH1, contactP];
-const contactFigureChildren = [imgSpan, contactFigcaption];
-
-// font awesome icon
+const contactFigureChildren = [contactFigcaption];
 
 // Appending Container Children
 appendChildren(contactHeader, headerChildren);
@@ -193,41 +186,27 @@ setAttributes(aSpanSignup, {
 	href: '/users'
 });
 
-// having problems renderering font awesome icon || so I'm doing
-// some experimentation here. The main problem is that the font awesome
-// icon is not rendering correctly because of the shadowDOM I believe
-const fontAwesomeScript = document.createElement('script');
-setAttributes(fontAwesomeScript, {
-	type: 'module',
-	// src: `https:${/}/kit.fontawesome.com/d7af42e269.js`,
-	crossorigin: 'anonymous'
-});
+const textFormH1 = (formH1.innerHTML = `Sign Up`);
+const textSpanSignup = (spanSignup.innerHTML = `Need to open an account? `);
+const textUsernameLabel = (usernameLabel.innerHTML = `Username`);
+const textCheckboxLabel = (checkboxLabel.innerHTML = `Remember Me`);
+const textEmailLabel = (emailLabel.innerHTML = `Enter your E-mail`);
+const textPasswordLabel = (passwordLabel.innerHTML = `Enter Password`);
+const textRepasswordLabel = (repasswordLabel.innerHTML = `Re-Enter Password`);
+const textButton = (submitButton.innerHTML = `Submit Log-In`);
+const textSpanA = (spanA.innerHTML = `Forgot password?`);
 
-const renderTextElements = () => {
-	const textFormH1 = (formH1.innerHTML = `Sign Up`);
-	const textSpanSignup = (spanSignup.innerHTML = `Need to open an account? `);
-	const textUsernameLabel = (usernameLabel.innerHTML = `Username`);
-	const textCheckboxLabel = (checkboxLabel.innerHTML = `Remember Me`);
-	const textEmailLabel = (emailLabel.innerHTML = `Enter your E-mail`);
-	const textPasswordLabel = (passwordLabel.innerHTML = `Enter Password`);
-	const textRepasswordLabel =
-		(repasswordLabel.innerHTML = `Re-Enter Password`);
-	const textButton = (submitButton.innerHTML = `Submit Log-In`);
-	const textSpanA = (spanA.innerHTML = `Forgot password?`);
-
-	const textFormGroup = [
-		textUsernameLabel,
-		textCheckboxLabel,
-		textEmailLabel,
-		textPasswordLabel,
-		textRepasswordLabel,
-		textButton,
-		textSpanA,
-		textFormH1,
-		textSpanSignup
-	];
-	renderArray(textFormGroup);
-};
+const textFormGroup = [
+	textUsernameLabel,
+	textCheckboxLabel,
+	textEmailLabel,
+	textPasswordLabel,
+	textRepasswordLabel,
+	textButton,
+	textSpanA,
+	textFormH1,
+	textSpanSignup
+];
 
 const formChildren = [contactHeader, formContainerDiv, formH1];
 const formContainerDivChildren = [
@@ -260,6 +239,7 @@ appendChildren(formContainerDiv, formContainerDivChildren);
 appendChildren(formInnerContainerDiv, formInnerContainerDivChildren);
 appendChildren(checkboxContainerDiv, checkboxContainerDivChildren);
 appendChildren(contactForm, formChildren);
+renderArray(textFormGroup);
 //
 //
-export { contactHeader as default, contactForm };
+export { contactForm as default };
