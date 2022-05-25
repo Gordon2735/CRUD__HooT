@@ -17,7 +17,7 @@
     "HootCRUDTest": "jest \"./bin/T_HootCRUD.test.js\n\"",
     "postHootCRUDTest": "npm run hello-world\n lint\n echo \"\u001b[36;1mPost-HootCRUD test\"\"\u001b[33;1mNPM Scripts have 'FIRED' the hello-world, LINT & the hootCRUD compiled TESTING Collection\n  delineating a Modular and loosely coupled Application\n \u001b[32;1mensuring the proper safeguards and mechanisms needed for achieving the desired seamless singularity while simultaneously adhering to software engineering industry's 'Best-Practices' principles!!  \"",
     "error": "echo \"This script failed\" && exit 1",
-    "cli": "npm run lint && npm run HootCRUDTest && npm run hello-world"
+    "cli": "npm run lint && npm run HootCRUDTest"
   },
   "bin": {
     "T_Hoot.test": "./bin/T_testAction.test.js ."

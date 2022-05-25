@@ -9,7 +9,7 @@ import appendChildren, {
 const body = document.querySelector('body');
 const contactHeader = document.createElement('header');
 const contactFigure = document.createElement('figure');
-// const imgSpan = document.createElement('span');
+const figureImg = document.createElement('img');
 const contactFigcaption = document.createElement('figcaption');
 const contactH1 = document.createElement('h1');
 const contactP = document.createElement('p');
@@ -25,6 +25,11 @@ setAttributes(contactHeader, {
 setAttributes(contactFigure, {
 	id: 'contact-figure',
 	class: 'contact-figure'
+});
+setAttributes(figureImg, {
+	id: 'contact-figure-img',
+	class: 'contact-figure-img',
+	src: '/components/hoot-contact/img/username-solid.png'
 });
 setAttributes(contactFigcaption, {
 	id: 'contact-figcaption',
@@ -48,7 +53,7 @@ const textGroup = [textContactH1, textContactP, textCaption];
 
 // Appending Header Children
 const headerChildren = [contactFigure, contactH1, contactP];
-const contactFigureChildren = [contactFigcaption];
+const contactFigureChildren = [figureImg, contactFigcaption];
 
 // Appending Container Children
 appendChildren(contactHeader, headerChildren);
@@ -71,6 +76,7 @@ const submitButton = document.createElement('button');
 const checkboxContainerDiv = document.createElement('div');
 const checkboxLabel = document.createElement('label');
 const checkboxInput = document.createElement('input');
+const createDate = document.createElement('input');
 const forgetPasswordSpan = document.createElement('span');
 const spanA = document.createElement('a');
 const formH1 = document.createElement('h1');
@@ -93,14 +99,14 @@ setAttributes(formInnerContainerDiv, {
 setAttributes(usernameLabel, {
 	id: 'username-label',
 	class: 'username-label',
-	for: 'uname'
+	for: 'username'
 });
 setAttributes(usernameInput, {
 	id: 'username-input',
 	class: 'username-input',
 	type: 'text',
-	name: 'uname',
-	placeholder: 'Enter Username',
+	name: 'username',
+	placeholder: 'Enter your Username',
 	required: true
 });
 setAttributes(emailLabel, {
@@ -149,8 +155,7 @@ setAttributes(submitButton, {
 });
 setAttributes(checkboxContainerDiv, {
 	id: 'checkbox-container-div',
-	class: 'container',
-	style: 'background-color: #eee'
+	class: 'container'
 });
 setAttributes(checkboxLabel, {
 	id: 'checkbox-label',
@@ -161,7 +166,14 @@ setAttributes(checkboxInput, {
 	class: 'checkbox-input',
 	type: 'checkbox',
 	checked: 'checked',
-	name: 'remember'
+	name: 'rememberme'
+});
+setAttributes(createDate, {
+	id: 'create-date',
+	class: 'create-date',
+	type: 'date',
+	name: 'createdAt',
+	value: new Date()
 });
 setAttributes(forgetPasswordSpan, {
 	id: 'forget-password-span',
@@ -188,7 +200,7 @@ setAttributes(aSpanSignup, {
 
 const textFormH1 = (formH1.innerHTML = `Sign Up`);
 const textSpanSignup = (spanSignup.innerHTML = `Need to open an account? `);
-const textUsernameLabel = (usernameLabel.innerHTML = `Username`);
+const textUserNameLabel = (usernameLabel.innerHTML = `Username`);
 const textCheckboxLabel = (checkboxLabel.innerHTML = `Remember Me`);
 const textEmailLabel = (emailLabel.innerHTML = `Enter your E-mail`);
 const textPasswordLabel = (passwordLabel.innerHTML = `Enter Password`);
@@ -197,7 +209,7 @@ const textButton = (submitButton.innerHTML = `Submit Log-In`);
 const textSpanA = (spanA.innerHTML = `Forgot password?`);
 
 const textFormGroup = [
-	textUsernameLabel,
+	textUserNameLabel,
 	textCheckboxLabel,
 	textEmailLabel,
 	textPasswordLabel,

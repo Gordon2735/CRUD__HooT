@@ -10,5 +10,8 @@ const testHootCRUD = () => {
 	T_calculatorCheck();
 	T_logDateCheck();
 };
-console.log(new Date());
+console.log(
+	`\u001b[31;1mTDD :::: TEST DRIVEN DEVELOPMENT on ${new Date()}:: 
+		\u001b[33;1m:::: testHootCRUD.test.js ::::`
+);
 export default testHootCRUD;
